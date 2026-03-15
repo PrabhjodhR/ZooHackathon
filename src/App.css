@@ -74,3 +74,31 @@ textarea {
   cursor: pointer;
   color: black;
 }
+
+.organized {
+  margin-top: 30px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.organized h2 {
+  color: gray;
+  margin-top: 0;
+}
+
+.organized ul {
+  list-style: none;
+  padding: 0;
+}
+
+.organized ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.organized ul li:last-child {
+  border-bottom: none;
+}
