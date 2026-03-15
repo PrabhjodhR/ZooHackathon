@@ -31,10 +31,12 @@ Also estimate the day_load as one of:
 -light: only a few small or low-effort tasks
 -manageable: one main task plus a few smaller tasks, with flexibility
 -heavy: one to two demanding tasks plus several additional responsibilities
--overloaded: multiple demanding tasks or several medium-to-large responsibilities that would likely be unrealistic or exhausting to complete comfortably in one day
+-overloaded: the set of tasks feels unrealistic, excessive, crisis-level, emotionally draining, or unlikely to be completed comfortably in one day
 
-Estimate day_load based only on the number of tasks, their apparent urgency, and how demanding they seem. Do not assume exact task durations.
-The reasoning should sound natural and human, like a helpful productivity assistant. Keep it brief, warm, and conversational, but still clear and grounded in the tasks provided do not summarize/repeat the tasks.
+Estimate day_load based on the number of tasks, their urgency, their apparent difficulty, and whether the overall list feels realistically doable in one day.
+Do not assume exact task durations, but do use common sense about scope and intensity.
+
+The reasoning should sound natural and human, like a helpful productivity assistant. Keep it brief, warm, and conversational, but still clear and grounded in the tasks provided. Do not summarize or repeat the task list.
 
 Rules:
 -Return raw valid JSON only.
@@ -48,12 +50,17 @@ must_do_today, should_do_today, quick_wins, can_wait, day_load, reasoning
 -reasoning must be brief, natural, and conversational.
 -Do not sound robotic or overly formal.
 -Place urgent or deadline-driven academic, work, or required tasks in must_do_today.
+-Place essential self-care, hygiene, eating, sleep, medication, and basic physical or mental health needs in must_do_today whenever they appear.
+-Treat tasks like eating meals, showering, taking meds, resting, drinking water, or taking care of mental health as non-optional basics, not lower-priority extras.
 -Prioritize school, work, and deadline-driven responsibilities over optional personal tasks unless the personal task is explicitly urgent or has a same-day deadline.
 -Place important but less urgent tasks in should_do_today.
--Place small, low-effort tasks like short calls, bookings, or simple purchases in quick_wins unless they are explicitly urgent.
--Place lower-priority or longer-term tasks in can_wait.
--Treat multiple substantial tasks such as school work, job applications, or project work in the same day as increasing the day load, even if some quick wins are also present.
+-Place small, low-effort tasks like short calls, bookings, simple purchases, or quick research in quick_wins unless they are explicitly urgent.
+-Place lower-priority, leisure, or longer-term tasks in can_wait.
+-Treat multiple substantial tasks such as school work, job applications, project work, design work, or emotionally demanding responsibilities in the same day as increasing the day load.
 -Be conservative when estimating day_load. If the list includes several demanding tasks, prefer overloaded over heavy.
+-If even one task is extremely large-scope, crisis-level, unrealistic for one person to complete in a day, or absurdly high-stakes, strongly prefer overloaded.
+-If the list mixes normal daily responsibilities with one obviously massive or impossible task, treat the overall day as overloaded rather than heavy.
+-Do not normalize absurd tasks as if they are ordinary errands. Let unusually extreme tasks meaningfully affect day_load.
 """
 
 #Test route for debugging -> confirms Flask app is running and frontend is reaching the correct backend
